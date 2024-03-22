@@ -119,15 +119,44 @@ https://explorer.zircuit.com/address/0x0C25d1B0E7d1fdB384C5E25cC6bFdC18bA3dEf38#
 ### Scroll Sepolia
 
 ```shell
-$ npm run deploy:sepolia-testnet
+$ npm run deploy:scroll-sepolia
+>
+Deploying contracts with the account: 0x8Fc8ecf8A75877E51aa595Bb1a02CF3804b24613
+ZicretPair deployed to: 0x0C25d1B0E7d1fdB384C5E25cC6bFdC18bA3dEf38
 ```
 
 ```shell
-$ npx hardhat verify --network scrollSepolia <zicretpair-contract-address-on-scrollSepolia>
+$ npx hardhat verify --network scroll_sepolia 0x0C25d1B0E7d1fdB384C5E25cC6bFdC18bA3dEf38
 ```
 
 ### Linea Goerli
 
 ```shell
-$ npx hardhat verify --network linea <zicretpair-contract-address-on-scrollSepolia>
+$ npm run deploy:linea-goerli
+>
+Deploying contracts with the account: 0x8Fc8ecf8A75877E51aa595Bb1a02CF3804b24613
+ZicretPair deployed to: 0x0C25d1B0E7d1fdB384C5E25cC6bFdC18bA3dEf38
+```
+
+```shell
+$ npx hardhat verify --network linea_goerli 0x0C25d1B0E7d1fdB384C5E25cC6bFdC18bA3dEf38
+```
+
+### Thundercore Testnet
+
+```shell
+$ npm run deploy:thunder-testnet
+>
+Deploying contracts with the account: 0x8Fc8ecf8A75877E51aa595Bb1a02CF3804b24613
+ZicretPair deployed to: 0x0C25d1B0E7d1fdB384C5E25cC6bFdC18bA3dEf38
+```
+```shell
+$ npx hardhat verify --network thunder_testnet 0x0C25d1B0E7d1fdB384C5E25cC6bFdC18bA3dEf38
+>
+Successfully submitted source code for contract
+contracts/ZicretPair.sol:ZicretPair at 0x0C25d1B0E7d1fdB384C5E25cC6bFdC18bA3dEf38
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract ZicretPair on the block explorer.
+https://explorer-testnet.thundercore.com/address/0x0C25d1B0E7d1fdB384C5E25cC6bFdC18bA3dEf38#code
 ```

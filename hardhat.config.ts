@@ -29,19 +29,24 @@ const config: HardhatUserConfig = {
             accounts: [process.env.PRIVATE_KEY as string]
         },
         scroll_sepolia: {
-            url: "https://sepolia-rpc.scroll.io" || "",
+            url: "https://sepolia-rpc.scroll.io",
             accounts: [process.env.PRIVATE_KEY as string]
         },
         linea_goerli: {
             url: process.env.LINEA_GOERLI_NODE_URL as string,
             accounts: [process.env.PRIVATE_KEY as string]
-        }
+        },
+        thunder_testnet: {
+            url: 'https://testnet-rpc.thundercore.com',
+            accounts: [process.env.PRIVATE_KEY as string]
+        },
     },
     etherscan: {
         apiKey: {
             zircuit_testnet: process.env.ZIRCUIT_API_KEY as string,
             scroll_sepolia: process.env.SCROLL_API_KEY as string,
-            linea_goerli: process.env.LINEA_API_KEY as string
+            linea_goerli: process.env.LINEA_API_KEY as string,
+            thunder_testnet: "unused"
         },
         customChains: [
             {
@@ -59,6 +64,22 @@ const config: HardhatUserConfig = {
                     apiURL: "https://sepolia-blockscout.scroll.io/api",
                     browserURL: "https://sepolia-blockscout.scroll.io/"
                 }
+            },
+            {
+                network: "linea_goerli",
+                chainId: 59140,
+                urls: {
+                    apiURL: "https://goerli.lineascan.build/api",
+                    browserURL: "https://goerli.lineascan.build/"
+                }
+            },
+            {
+                network: "thunder_testnet",
+                chainId: 18,
+                urls: {
+                apiURL: "https://explorer-testnet.thundercore.com/api",
+                browserURL: "https://explorer-testnet.thundercore.com",
+                },
             }
         ]
     }
