@@ -14,7 +14,9 @@
         "node": "npx hardhat node",
         "deploy:local": "npx hardhat run scripts/deploy.ts --network localhost",
         "deploy:zircuit-testnet": "npx hardhat run scripts/deploy.ts --network zircuit_testnet",
-        "deploy:sepolia-testnet": "npx hardhat run scripts/deploy.ts --network sepolia"
+        "deploy:sepolia": "npx hardhat run scripts/deploy.ts --network sepolia",
+        "deploy:scroll-sepolia": "npx hardhat run scripts/deploy.ts --network scroll_sepolia",
+        "deploy:linea-goerli": "npx hardhat run scripts/deploy.ts --network linea_goerli"
     },
     "devDependencies": {
         "@ianvs/prettier-plugin-sort-imports": "^4.2.0",

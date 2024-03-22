@@ -28,29 +28,32 @@ const config: HardhatUserConfig = {
             url: "https://zircuit1.p2pify.com",
             accounts: [process.env.PRIVATE_KEY as string]
         },
-        scrollSepolia: {
+        scroll_sepolia: {
             url: "https://sepolia-rpc.scroll.io" || "",
-            accounts:
-                process.env.PRIVATE_KEY !== undefined
-                    ? [process.env.PRIVATE_KEY]
-                    : []
+            accounts: [process.env.PRIVATE_KEY as string]
         },
-        lineaGoerli: {
+        linea_goerli: {
             url: process.env.LINEA_GOERLI_NODE_URL as string,
-            accounts:
-                process.env.PRIVATE_KEY !== undefined
-                    ? [process.env.PRIVATE_KEY]
-                    : []
+            accounts: [process.env.PRIVATE_KEY as string]
         }
     },
     etherscan: {
         apiKey: {
             zircuit_testnet: process.env.ZIRCUIT_API_KEY as string,
-            scrollSepolia: process.env.SCROLL_API_KEY as string
+            scroll_sepolia: process.env.SCROLL_API_KEY as string,
+            linea_goerli: process.env.LINEA_API_KEY as string
         },
         customChains: [
             {
-                network: "scrollSepolia",
+                network: "zircuit_testnet",
+                chainId: 48899,
+                urls: {
+                    apiURL: "https://explorer.zircuit.com/api/contractVerifyHardhat",
+                    browserURL: "https://explorer.zircuit.com"
+                }
+            },
+            {
+                network: "scroll_sepolia",
                 chainId: 534351,
                 urls: {
                     apiURL: "https://sepolia-blockscout.scroll.io/api",
